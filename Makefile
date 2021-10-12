@@ -19,6 +19,13 @@ run_child_proc.o: run_child_proc.c
 	gcc $(CFLAGS) -c run_child_proc.c
 	mv run_child_proc.o bin/run_child_proc.o
 
+run_child_proc_nonblock: run_child_proc_nonblock.o
+	gcc $(CFLAGS) -o bin/run_child_proc_nonblock bin/run_child_proc_nonblock.o
+
+run_child_proc_nonblock.o: run_child_proc_nonblock.c
+	gcc $(CFLAGS) -c run_child_proc_nonblock.c
+	mv run_child_proc_nonblock.o bin/run_child_proc_nonblock.o
+
 clean:
 	rm -f bin/*.o
 
