@@ -12,6 +12,13 @@ getopt_long.o: getopt_long.c
 	gcc $(CFLAGS) -c getopt_long.c
 	mv getopt_long.o bin/getopt_long.o
 
+run_child_proc: run_child_proc.o
+	gcc $(CFLAGS) -o bin/run_child_proc bin/run_child_proc.o
+
+run_child_proc.o: run_child_proc.c
+	gcc $(CFLAGS) -c run_child_proc.c
+	mv run_child_proc.o bin/run_child_proc.o
+
 clean:
 	rm -f bin/*.o
 
