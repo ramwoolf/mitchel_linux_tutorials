@@ -33,6 +33,13 @@ thread_create.o: thread_create.c
 	gcc $(CFLAGS) -c thread_create.c
 	mv thread_create.o bin/thread_create.o
 
+bad_get_primes: bad_get_primes.o
+	gcc $(CFLAGS) -o bin/bad_get_primes bin/bad_get_primes.o -lpthread
+
+bad_get_primes.o: bad_get_primes.c
+	gcc $(CFLAGS) -c bad_get_primes.c
+	mv bad_get_primes.o bin/bad_get_primes.o
+
 clean:
 	rm -f bin/*.o
 

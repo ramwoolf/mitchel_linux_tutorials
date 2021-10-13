@@ -6,7 +6,7 @@ struct char_print_params {
     int count;
 };
 
-void char_print(void *parameters) {
+void* char_print(void *parameters) {
     struct char_print_params *p = (struct char_print_params *) parameters;
     int i = 0;
 
