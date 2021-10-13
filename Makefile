@@ -26,6 +26,13 @@ run_child_proc_nonblock.o: run_child_proc_nonblock.c
 	gcc $(CFLAGS) -c run_child_proc_nonblock.c
 	mv run_child_proc_nonblock.o bin/run_child_proc_nonblock.o
 
+thread_create: thread_create.o
+	gcc $(CFLAGS) -o bin/thread_create bin/thread_create.o -lpthread
+
+thread_create.o: thread_create.c
+	gcc $(CFLAGS) -c thread_create.c
+	mv thread_create.o bin/thread_create.o
+
 clean:
 	rm -f bin/*.o
 
