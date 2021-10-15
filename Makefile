@@ -40,8 +40,16 @@ bad_get_primes.o: bad_get_primes.c
 	gcc $(CFLAGS) -c bad_get_primes.c
 	mv bad_get_primes.o bin/bad_get_primes.o
 
+thread_journal: thread_journal.o
+	gcc $(CFLAGS) -o bin/thread_journal bin/thread_journal.o -lpthread
+
+thread_journal.o: thread_journal.c
+	gcc $(CFLAGS) -fno-stack-protector -c thread_journal.c
+	mv thread_journal.o bin/thread_journal.o
+
 clean:
 	rm -f bin/*.o
+	rm -f bin/*.log
 
 cleanall:
 	rm -rf bin/*
