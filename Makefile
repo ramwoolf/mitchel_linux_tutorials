@@ -47,6 +47,13 @@ thread_journal.o: thread_journal.c
 	gcc $(CFLAGS) -fno-stack-protector -c thread_journal.c
 	mv thread_journal.o bin/thread_journal.o
 
+producers_consumers: producers_consumers.o
+	gcc $(CFLAGS) -o bin/producers_consumers bin/producers_consumers.o -lpthread
+
+producers_consumers.o: producers_consumers.c
+	gcc $(CFLAGS) -c producers_consumers.c
+	mv producers_consumers.o bin/producers_consumers.o
+
 clean:
 	rm -f bin/*.o
 	rm -f bin/*.log
